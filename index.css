@@ -1,0 +1,74 @@
+.interactions {
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.5em;
+    margin: 10px 10px 10px 0;
+}
+
+.draggable {
+    height: 120px;
+    width: 120px;
+}
+
+.droppable {
+    height: 150px;
+    width: 150px;
+}
+
+.resizeable {
+    height: 150px;
+    width: 150px;
+}
+
+#selectable .ui-selecting {
+    background: grey;
+}
+
+#selectable .ui-selected {
+    background: red;
+    color: yellow;
+}
+
+.widgets {
+    text-align: center;
+}
+
+.widget-container {
+    width: 24%;
+    text-align: center;
+    display: inline;
+    margin: auto;
+}
+
+#test {
+    text-align: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+.pg {
+    background-color: grey;
+}
+
+h1 {
+    background-color: grey;
+    width: 100%;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.ui-header .ui-title,
+.ui-footer .ui-title {
+    margin: 0px 0px;
+}
+
+.accordion-container {
+    margin-bottom: 20px;
+}

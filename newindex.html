@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactions, Animations and Widgets</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script><!--jQuery javascript-->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--jquery mobile javascript   ^^^ -->
+    <!-- jquery mobile css -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="themes/mytheme.css" /> <!--theme css-->
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /><!--theme icons-->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!--jQuery UI javscript-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"><!--jQuery UI css-->
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css"><!--My css-->
+</head>
+
+<body>
+
+    <!-- Interactions page -->
+    <div class="pg" data-role="page" id="Interactions">
+
+        <header data-role="header">
+            <h1>Interactions, Animations and Widgets</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Interactions" data-icon="home" data-theme="b"
+                            class="ui-btn-active ui-state-persist">Interactions</a>
+                    </li>
+                    <li><a href="#Animations" data-icon="grid" data-theme="b">Animations</a></li>
+                    <li><a href="#Widgets" data-icon="star" data-theme="b">Widgets</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="ui-content" role="main">
+            <div style="text-align: center;">
+                <h1>Interactions</h1>
+                <div class="group"> <!--Interactions Group-->
+                    <h3>This box is draggable</h3>
+                    <p style="margin-bottom: 100px;background-color: red;"
+                        class="box draggable interactions ui-widget-content"></p>
+                    <br />
+
+                    <h3>This box can be dropped in the other</h3>
+                    <div style="margin-bottom:100px;">
+                        <p style="margin-bottom: 100px;background-color: red;"
+                            class="box draggable interactions ui-widget-content"></p>
+                        <p id="droppable" class="box ui-widget-content droppable interactions"
+                            style="height: 150px; width: 150px;"></p>
+                    </div>
+
+                    <h3>This box is selectable</h3>
+                    <div style="margin-bottom:100px;" id="selectable">
+                        <p class="selectable interactions ui-widget-content"></p>
+                    </div>
+
+                    <h3>This box is resizeable</h3>
+                    <p style=margin-bottom:100px; class="box resizeable interactions ui-widget-content"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Animations page -->
+    <div class="pg" data-role="page" id="Animations">
+        <header data-role="header">
+            <h1>Interactions, Animations and Effects</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Interactions" data-icon="home" data-theme="b">Interactions</a>
+                    </li>
+                    <li><a href="#Animations" class="ui-btn-active ui-state-persist" data-icon="grid"
+                            data-theme="b">Animations</a></li>
+                    <li><a href="#Widgets" data-icon="star" data-theme="b">Widgets</a></li>
+                </ul>
+            </div>
+        </header>
+        <section class="ui-content">
+            <div style="text-align: center;">
+                <h1>Animations</h1>
+                <div class="widgets">
+                    <div class="widget-container">
+                        <h3>Show and Hide</h3>
+                        <div id="hide" class="box"></div>
+                        <div>
+                            <button onclick="showbox()">Show</button>
+                            <button onclick="hidebox()">Hide</button>
+                        </div>
+                    </div>
+                    <div class="widget-container">
+                        <h3>Explode</h3>
+                        <div id="explode" class="box"></div>
+                        <button onclick="explode()">Explode</button>
+                        <button onclick="resetExplode()">Reset</button>
+                    </div>
+
+                    <div class="widget-container">
+                        <h3>Fade In and Fade Out</h3>
+                        <div id="fade" class="box"></div>
+                        <button onclick="fadeIn()">Fade In</button>
+                        <button onclick="fadeOut()">Fade Out</button>
+                    </div>
+
+                    <div class="widget-container" style="padding-right:20px;">
+                        <h3>Color Animation</h3>
+                        <div id="color" class="box"></div>
+                        <button onclick="pink()">Pink</button>
+                        <button onclick="red()">Red</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Widgets page -->
+    <div class="pg" data-role="page" id="Widgets">
+        <header data-role="header">
+            <h1>Interactions, Animations and Effects</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Interactions" data-icon="home" data-theme="b">Interactions</a>
+                    </li>
+                    <li><a href="#Animations" data-icon="grid" data-theme="b">Animations</a></li>
+                    <li><a href="#Widgets" class="ui-btn-active ui-state-persist" data-icon="star"
+                            data-theme="b">Widgets</a></li>
+                </ul>
+            </div>
+        </header>
+        <section class="ui-content">
+            <div id="test" style="text-align: center;">
+                <h1>Widgets</h1>
+                <!-- Autocomplete group -->
+                <div class="widget-container" style="margin-bottom:300px;">
+                    <h3>AutoComplete</h3>
+                    <div class="ui-widget">
+                        <label for="tags">Color:</label>
+                        <input id="tags">
+                    </div>
+                </div>
+
+                <div class="widget-container">
+                    <h3>DatePicker</h3>
+                    <p>Date: <input type="text" id="datepicker"></p>
+                </div>
+
+                <div class="widget-container">
+                    <h3>Slider</h3>
+                    <div id="slider"></div>
+                    <label for="sliderpercent">Percentage:</label>
+                    <p id="sliderpercent">0</p>
+                </div>
+                <!-- Accordion group -->
+                <div style="margin-bottom:300px;" class="widget-container">
+                    <h3>Accordion</h3>
+                    <div id="accordion" style="height:100px;">
+                        <h3>Tab 1</h3>
+                        <div style="padding-bottom:50px;">Lorem ipsum 1</div>
+                        <h3>Tab 2</h3>
+                        <div style="padding-bottom:50px;">Lorem ipsum 2</div>
+                        <h3>Tab 3</h3>
+                        <div style="padding-bottom:50px;">Lorem ipsum 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
